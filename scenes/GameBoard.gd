@@ -5,8 +5,8 @@ var state_manager: GameStateManager
 var rules_engine: GameRulesEngine
 
 func _ready():
-	state_manager = GameState
-	rules_engine = GameRules
+	state_manager = get_node("/root/GameState") as GameStateManager
+	rules_engine = get_node("/root/GameRules") as GameRulesEngine
 	state_manager.start_new_game()
 	update_ui()
 
