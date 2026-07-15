@@ -1,6 +1,6 @@
 # SeaPals TCG - Godot Implementation
 
-###THIS IS NOT FINISHED AND HAS QUITE A FEW BUGS!
+### THIS IS NOT FINISHED AND HAS QUITE A FEW BUGS!
 
 A complete port of the SeaPals Trading Card Game simulator to Godot Engine.
 
