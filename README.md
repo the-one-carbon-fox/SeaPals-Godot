@@ -1,6 +1,6 @@
 # SeaPals TCG - Godot Implementation
 
-### THIS IS NOT FINISHED AND HAS QUITE A FEW BUGS!
+## THIS IS NOT FINISHED AND HAS QUITE A FEW BUGS!
 
 A complete port of the SeaPals Trading Card Game simulator to Godot Engine.
 
@@ -27,16 +27,12 @@ project/
 └── project.godot         # Project configuration
 ```
 
-## Features Implemented
-
-### Core Systems
-- ✅ Card Database system with card lookups
-- ✅ Game State management (rounds, turns, phases)
-- ✅ Game Rules engine (dice rolls, damage, resources)
-- ✅ Main game board UI layout
-- ✅ Card instance system
-
 ### In Progress
+-  Card Database system with card lookups
+-  Game State management (rounds, turns, phases)
+-  Game Rules engine (dice rolls, damage, resources)
+-  Main game board UI layout
+-  Card instance system
 - Deck building and setup
 - Hand management
 - Play card mechanics
