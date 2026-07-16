@@ -1,0 +1,141 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfjpwvbzwl93g"]
+
+[ext_resource type="Script" path="res://scenes/GameBoard.gd" id="1_m8d5r"]
+
+[node name="GameBoard" type="Control"]
+layout_mode = 3
+anchors_left = 0.0
+anchors_top = 0.0
+anchors_right = 1.0
+anchors_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m8d5r")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_left = 0.0
+anchors_top = 0.0
+anchors_right = 1.0
+anchors_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.15, 0.25, 1.0)
+
+[node name="OpponentArea" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_left = 0.0
+anchors_top = 0.0
+anchors_right = 1.0
+anchors_bottom = 0.3
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+
+[node name="OpponentBoard" type="VBoxContainer" parent="OpponentArea"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="OpponentLabel" type="Label" parent="OpponentArea/OpponentBoard"]
+layout_mode = 2
+text = "OPPONENT"
+
+[node name="CenterArea" type="Control" parent="."]
+layout_mode = 1
+anchors_left = 0.0
+anchors_top = 0.3
+anchors_right = 1.0
+anchors_bottom = 0.7
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterPanel" type="PanelContainer" parent="CenterArea"]
+layout_mode = 1
+anchors_left = 0.0
+anchors_top = 0.0
+anchors_right = 1.0
+anchors_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Conditions" type="Label" parent="CenterArea/CenterPanel"]
+layout_mode = 2
+text = "Current Condition: None"
+horizontal_alignment = 1
+
+[node name="PlayerArea" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_left = 0.0
+anchors_top = 0.7
+anchors_right = 1.0
+anchors_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+
+[node name="PlayerBoard" type="VBoxContainer" parent="PlayerArea"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PlayerLabel" type="Label" parent="PlayerArea/PlayerBoard"]
+layout_mode = 2
+text = "YOUR HAND"
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="TopBar" type="PanelContainer" parent="UILayer"]
+offset_right = 1024.0
+offset_bottom = 60.0
+
+[node name="TopBarContent" type="HBoxContainer" parent="UILayer/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RoundLabel" type="Label" parent="UILayer/TopBar/TopBarContent"]
+layout_mode = 2
+text = "Round: 1"
+
+[node name="PlayerStatsLabel" type="Label" parent="UILayer/TopBar/TopBarContent"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "You: 0 VP | 0/8 RP"
+horizontal_alignment = 2
+
+[node name="OpponentStatsLabel" type="Label" parent="UILayer/TopBar/TopBarContent"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Opponent: 0 VP | 0/8 RP"
+horizontal_alignment = 2
+
+[node name="ActionButtons" type="HBoxContainer" parent="UILayer"]
+offset_top = 724.0
+offset_right = 1024.0
+offset_bottom = 768.0
+alignment = 2
+
+[node name="EndTurnButton" type="Button" parent="UILayer/ActionButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "End Turn"
