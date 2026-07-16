@@ -4,6 +4,10 @@
 
 A complete port of the SeaPals Trading Card Game simulator to Godot Engine.
 
+## Engine Version
+
+This project targets **Godot 4.7** using the GL Compatibility renderer.
+
 ## Project Structure
 
 ```
@@ -46,4 +50,4 @@ This implementation uses GDScript for game logic and Godot's built-in UI system 
 
 ## Testing
 
-Run the project with `godot` to launch the main menu.
+Run the project with Godot 4.7 to launch the main menu. From a local install with the CLI available, use `godot --path .` from the repository root.

@@ -6981,7 +6981,7 @@ export default function Simulator() {
   const visiblePlayError = playError || selectedHandPlayError;
 
   return (
-    <main className="seapals-game-shell fixed inset-0 z-30 overflow-hidden bg-[#061522] p-2 text-slate-100 sm:p-3">
+    <main className="seapals-game-shell fixed inset-0 z-30 overflow-hidden bg-[#061522] p-2 text-slate-100 sm:p-4">
       <style jsx global>{`
         @keyframes seapalsDrawerIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
         @keyframes seapalsEventPop { 0% { transform: scale(.88); opacity: 0; } 65% { transform: scale(1.025); opacity: 1; } 100% { transform: scale(1); opacity: 1; } }
@@ -7017,16 +7017,16 @@ export default function Simulator() {
         .seapals-card-drawer { animation: seapalsDrawerIn 260ms ease-out; }
         .seapals-event-card { animation: seapalsEventPop 320ms ease-out; }
       `}</style>
-      <section className="grid h-full min-h-0 gap-3 xl:grid-cols-[minmax(0,1fr)_20rem] xl:grid-rows-[minmax(0,1fr)_9rem_auto]">
-        <div className="seapals-hud-panel seapals-arena-frame relative flex h-full min-h-0 flex-col rounded-2xl border border-cyan-400/25 p-3 shadow-2xl xl:col-start-1 xl:row-span-3 xl:row-start-1">
+      <section className="grid h-full min-h-0 gap-4 xl:grid-cols-[minmax(0,1fr)_20rem] xl:grid-rows-[minmax(0,1fr)_9rem_auto]">
+        <div className="seapals-hud-panel seapals-arena-frame relative flex h-full min-h-0 flex-col rounded-[1.65rem] border border-cyan-400/25 p-4 shadow-2xl xl:col-start-1 xl:row-span-3 xl:row-start-1">
           <div className="mb-2 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
             <div>
               <div className="flex items-center gap-3">
-                <Link href="/" aria-label="Exit simulator and return home" className="group flex h-10 items-center gap-2 rounded-xl border border-cyan-300/25 bg-cyan-400/10 px-3 text-cyan-200 shadow-[0_0_24px_rgba(34,211,238,.12)] transition hover:border-cyan-200/50 hover:bg-cyan-300/15">
-                  <span className="text-lg font-black transition group-hover:-translate-x-0.5">←</span><span className="hidden text-[10px] font-black uppercase tracking-wider sm:inline">Home</span>
+                <Link href="/" aria-label="Exit simulator and return home" className="group flex h-12 items-center gap-3 rounded-2xl border border-cyan-300/25 bg-cyan-400/10 px-5 text-cyan-100 shadow-[0_0_24px_rgba(34,211,238,.12)] transition hover:border-cyan-200/50 hover:bg-cyan-300/15">
+                  <span className="text-lg font-black transition group-hover:-translate-x-0.5">←</span><span className="hidden text-sm font-black uppercase tracking-wider sm:inline">Home</span>
                 </Link>
                 <div>
-                  <h1 className="text-lg font-black tracking-tight text-white">SeaPals Simulator</h1>
+                  <h1 className="text-2xl font-black tracking-tight text-white">SeaPals Simulator</h1>
                   <p className="hidden text-xs text-cyan-100/60 sm:block">Build your reef. Outsmart the opposing ecosystem.</p>
                 </div>
               </div>
@@ -7048,7 +7048,7 @@ export default function Simulator() {
                 {isSetup ? "Setup Round" : `Round ${round} • Turn ${turn}`} • {gamePhase === "draw" ? "Choose cards" : gamePhase === "main" ? "Play & Act" : gamePhase === "opponent" ? "Opponent turn" : "Transition"}
               </div>
               <details className="relative">
-                <summary className="cursor-pointer list-none rounded-xl border border-white/10 bg-slate-950/45 px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-200 transition hover:bg-white/10 [&::-webkit-details-marker]:hidden">Menu</summary>
+                <summary className="cursor-pointer list-none rounded-2xl border border-white/10 bg-slate-950/70 px-5 py-3 text-sm font-black uppercase tracking-[0.16em] text-slate-100 shadow-lg transition hover:bg-white/10 [&::-webkit-details-marker]:hidden">Menu</summary>
                 <div className="absolute right-0 top-11 z-[70] w-48 rounded-xl border border-cyan-300/20 bg-slate-950/95 p-2 shadow-2xl backdrop-blur-xl">
                   <button type="button" onClick={openNewGameSetup} className="w-full rounded-lg px-3 py-2 text-left text-sm font-bold text-slate-200 hover:bg-white/10">Start New Game</button>
                   <Link href="/" className="mt-1 block rounded-lg px-3 py-2 text-sm font-bold text-slate-200 hover:bg-white/10">Exit to Home</Link>
@@ -8077,8 +8077,8 @@ export default function Simulator() {
       ) : null}
 
       {modal ? (
-        <div className={`fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/80 p-2 backdrop-blur-sm sm:p-4 ${modal === "hand" ? "xl:hidden" : ""}`}>
-          <div className={`max-h-[calc(100dvh-1rem)] max-w-[56rem] w-full overflow-y-auto rounded-[2rem] border p-4 shadow-2xl sm:max-h-[calc(100dvh-2rem)] sm:p-6 ${isDarkZoneModal ? "seapals-hud-panel border-cyan-300/25 text-slate-100" : "border-transparent bg-white text-slate-900"}`}>
+        <div className={`fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/80 p-2 backdrop-blur-sm sm:p-4`}>
+          <div className={`max-h-[calc(100dvh-1rem)] max-w-[78rem] w-full overflow-y-auto rounded-[2rem] border p-4 shadow-2xl sm:max-h-[calc(100dvh-2rem)] sm:p-6 ${isDarkZoneModal ? "seapals-hud-panel border-cyan-300/25 text-slate-100" : "border-transparent bg-white text-slate-900"}`}>
             <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h3 className="text-xl font-bold">{modalTitle}</h3>
@@ -8180,8 +8180,8 @@ export default function Simulator() {
                 <button type="button" disabled={!turnDrawSelection || turnDrawSelection.foundation + turnDrawSelection.pals !== turnDrawSelection.target} onClick={completeDrEvans} className="mt-5 w-full rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400 px-6 py-3 font-black text-slate-950 disabled:from-slate-700 disabled:to-slate-700 disabled:text-slate-400">Discard Hand &amp; Draw Selected Cards</button>
               </div>
             ) : modal === "hand" ? (
-              <div className="flex min-h-0 flex-col gap-3 lg:grid lg:grid-cols-[180px_minmax(0,1fr)] lg:gap-4">
-                <div className="order-2 overflow-x-auto overflow-y-hidden rounded-3xl border border-cyan-300/20 bg-slate-950/35 p-3 overscroll-contain lg:order-1 lg:max-h-[560px] lg:overflow-x-hidden lg:overflow-y-auto lg:p-4" style={{ minWidth: 180 }}>
+              <div className="flex min-h-0 flex-col gap-3 lg:grid lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-4">
+                <div className="order-2 overflow-x-auto overflow-y-hidden rounded-3xl border border-cyan-300/20 bg-slate-950/35 p-3 overscroll-contain lg:order-1 lg:max-h-[620px] lg:overflow-x-hidden lg:overflow-y-auto lg:p-4" style={{ minWidth: 180 }}>
                   {modalCards.length ? (
                     <div className="flex w-max gap-2 lg:block lg:w-auto lg:space-y-3">
                       {modalCards.map((cardId, cardIndex) => {
@@ -8224,7 +8224,7 @@ export default function Simulator() {
                         <img
                           src={cardsById[selectedHandCard]?.image}
                           alt={cardsById[selectedHandCard]?.name}
-                          className="h-[30dvh] min-h-[190px] max-h-[280px] w-full rounded-2xl object-contain lg:h-[560px] lg:max-h-none lg:rounded-[1.5rem]"
+                          className="h-[30dvh] min-h-[190px] max-h-[280px] w-full rounded-2xl object-contain lg:h-[640px] lg:max-h-none lg:rounded-[1.5rem]"
                         />
                       </div>
                       <div className="space-y-2 text-center">

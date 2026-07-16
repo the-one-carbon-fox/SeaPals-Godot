@@ -66,7 +66,7 @@ func calculate_victory_points(cards_in_play: Array) -> int:
 			if bonus and bonus.get("type") == "perCardOnReef":
 				var matching_count = cards_in_play.filter(func(c): return c.get("id") == bonus.get("target_card_id")).size()
 				total += matching_count * bonus.get("amount", 0)
-		return total
+	return total
 
 func determine_victory_result(player_vp: int, opponent_vp: int, target: int) -> Dictionary:
 	var player = maxi(0, player_vp)

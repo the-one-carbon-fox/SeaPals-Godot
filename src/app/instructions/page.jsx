@@ -3,6 +3,9 @@ import Link from "next/link";
 import AskFinnButton from "./AskFinnButton";
 import Faq from "./Faq";
 import InstructionsNav from "./InstructionsNav";
+import { PLAYER_GLOSSARY } from "@/data/rules/playerGlossary.mjs";
+import { CORE_RULES } from "@/lib/rulesAssistant.mjs";
+import { SIMULATOR_RULES } from "@/lib/seapalsRulesKnowledge.mjs";
 
 export const metadata = {
   title: "How to Play SeaPals | Beginner Guide & Complete Rules",
@@ -68,6 +71,31 @@ const glossary = [
   ["School Density", "An Oceanic value supplied by Creature Schools. It is checked for requirements, not spent like RP."],
   ["Discard", "Cards that are spent, discarded, or destroyed. They are no longer in play."],
 ];
+
+
+const completeRuleCards = [
+  ...CORE_RULES.map((rule) => ({
+    title: rule.title,
+    text: rule.text,
+    source: "Core rule",
+  })),
+  ...SIMULATOR_RULES.map((rule) => ({
+    title: rule.title,
+    text: rule.text,
+    source: "Simulator-enforced rule",
+  })),
+];
+
+const fullGlossary = [
+  ...glossary.map(([term, definition]) => ({ term, definition, source: "Player shortcut" })),
+  ...PLAYER_GLOSSARY.map((entry) => ({
+    term: entry.title,
+    definition: entry.text,
+    source: entry.category ? entry.category.replace(/-/g, " ") : "Glossary",
+  })),
+].filter((entry, index, entries) =>
+  entries.findIndex((candidate) => candidate.term.toLowerCase() === entry.term.toLowerCase()) === index,
+);
 
 const faqQuestions = [
   {
@@ -977,6 +1005,36 @@ export default function InstructionsPage() {
               </RuleDetails>
             </div>
 
+            <div className="mt-8 rounded-[2rem] border border-cyan-100 bg-white p-5 shadow-sm md:p-7">
+              <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                <div>
+                  <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-700">Rules index</p>
+                  <h3 className="mt-2 text-2xl font-black text-slate-950">All current rules loaded into the site</h3>
+                  <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-600">
+                    This index mirrors the same core and simulator-enforced rule set used by Finn, so the rules page is not just a beginner guide. Open a card below when you need exact wording during play.
+                  </p>
+                </div>
+                <div className="rounded-2xl bg-cyan-50 px-4 py-3 text-sm font-bold text-cyan-900 ring-1 ring-cyan-100">
+                  {completeRuleCards.length} rule entries
+                </div>
+              </div>
+
+              <div className="mt-5 grid gap-3 md:grid-cols-2">
+                {completeRuleCards.map((rule, index) => (
+                  <details key={`${rule.source}-${rule.title}-${index}`} className="group rounded-2xl border border-slate-200 bg-slate-50/70 open:bg-white open:shadow-sm">
+                    <summary className="flex cursor-pointer list-none items-start justify-between gap-4 px-4 py-3 [&::-webkit-details-marker]:hidden">
+                      <span>
+                        <span className="text-[0.65rem] font-black uppercase tracking-[0.16em] text-cyan-700">{rule.source}</span>
+                        <span className="mt-1 block font-bold text-slate-950">{rule.title}</span>
+                      </span>
+                      <span aria-hidden="true" className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white text-lg font-black text-cyan-800 ring-1 ring-cyan-100 transition group-open:rotate-45 group-open:bg-cyan-700 group-open:text-white">+</span>
+                    </summary>
+                    <p className="border-t border-slate-200 px-4 py-4 text-sm leading-6 text-slate-600">{rule.text}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
+
             <div className="mt-6 flex flex-col items-start justify-between gap-4 rounded-3xl border border-cyan-200 bg-cyan-50 p-6 sm:flex-row sm:items-center">
               <div>
                 <h3 className="text-lg font-bold text-slate-950">Need the working source document?</h3>
@@ -994,10 +1052,11 @@ export default function InstructionsPage() {
             </SectionHeading>
 
             <dl className="mt-7 grid gap-3 sm:grid-cols-2">
-              {glossary.map(([term, definition]) => (
+              {fullGlossary.map(({ term, definition, source }) => (
                 <div key={term} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                   <dt className="font-black text-cyan-800">{term}</dt>
                   <dd className="mt-2 text-sm leading-6 text-slate-600">{definition}</dd>
+                  <dd className="mt-3 text-[0.65rem] font-black uppercase tracking-[0.16em] text-slate-400">{source}</dd>
                 </div>
               ))}
             </dl>
