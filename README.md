@@ -2,7 +2,7 @@
 
 ## THIS IS NOT FINISHED AND HAS QUITE A FEW BUGS!
 
-A complete port/rebuild of the SeaPals Trading Card Game simulator to Godot Engine.
+A offline conditions deck app for when you leave the deck at home
 
 ## Engine Version
 
