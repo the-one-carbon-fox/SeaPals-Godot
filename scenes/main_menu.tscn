@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://2yvq6yiiep7y"]
+
+[ext_resource type="Script" uid="uid://bn8hia61spaw2" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+
+[node name="main menu" type="Node2D" unique_id=2032728480]
+script = ExtResource("1_l6cm7")
+
+[node name="Button" type="Button" parent="." unique_id=914018667]
+offset_left = 529.0
+offset_top = 371.0
+offset_right = 575.0
+offset_bottom = 402.0
+text = "Start"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
