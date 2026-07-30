@@ -1,6 +1,6 @@
 # SeaPals Tools Card Game - Godot tools app
 
-A offline tools deck app for when you leave the deck at home 
+A offline tools app for when you leave the deck at home 
 
 ## Engine Version
 
