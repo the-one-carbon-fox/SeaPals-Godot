@@ -2,19 +2,591 @@
 
 [ext_resource type="Script" uid="uid://bmls8ilmh7ibn" path="res://scripts/conditions.gd" id="1_agbcl"]
 [ext_resource type="Script" uid="uid://bpfm0hcy8x43s" path="res://scripts/node_2d.gd" id="2_4d2fy"]
+[ext_resource type="Script" uid="uid://rg0p3udxdgdd" path="res://scripts/vp.gd" id="3_8g6nm"]
+[ext_resource type="Script" uid="uid://b2ik7dhh8dnwp" path="res://scripts/v_slider.gd" id="3_vfxqr"]
+[ext_resource type="Script" uid="uid://btvc6rexfjaej" path="res://scripts/s_slider.gd" id="5_vwarc"]
+[ext_resource type="Script" uid="uid://8cx0tvruxrhh" path="res://scripts/sd.gd" id="6_ropwx"]
+[ext_resource type="Script" uid="uid://bh7p8mou0d7ex" path="res://scripts/r_slider.gd" id="7_umgyx"]
+[ext_resource type="Script" uid="uid://bn37mb2hsxlc8" path="res://scripts/rp.gd" id="8_2khvy"]
+[ext_resource type="Script" uid="uid://ckbps7rhuxxgg" path="res://scripts/label.gd" id="9_2khvy"]
 
 [node name="conditions" type="Node2D" unique_id=1961213245]
 script = ExtResource("1_agbcl")
 
 [node name="Draw" type="Button" parent="." unique_id=491413789]
-offset_left = 93.0
-offset_top = 604.0
-offset_right = 1067.0
-offset_bottom = 643.0
+offset_left = 657.0
+offset_top = 645.0
+offset_right = 1206.0
+offset_bottom = 684.0
 text = "Draw"
 
 [node name="ConditionDeck" type="Sprite2D" parent="." unique_id=2138642071]
-position = Vector2(574, 336)
+position = Vector2(932, 339)
 script = ExtResource("2_4d2fy")
 
+[node name="P1" type="Node2D" parent="." unique_id=578008256]
+position = Vector2(0, 3)
+
+[node name="ColorRect" type="ColorRect" parent="P1" unique_id=1966980482]
+offset_left = -4.0
+offset_top = -5.0
+offset_right = 161.0
+offset_bottom = 338.0
+color = Color(0.015686275, 0.61960787, 1, 1)
+
+[node name="Player 1" type="Label" parent="P1" unique_id=559739830]
+offset_left = 27.0
+offset_top = 1.0
+offset_right = 89.0
+offset_bottom = 24.0
+text = "Player 1"
+
+[node name="VP" type="Node2D" parent="P1" unique_id=467640869]
+
+[node name="VSlider" type="VSlider" parent="P1/VP" unique_id=1024546476]
+offset_top = 77.0
+offset_right = 48.0
+offset_bottom = 270.0
+max_value = 30.0
+script = ExtResource("3_vfxqr")
+
+[node name="VP" type="Label" parent="P1/VP" unique_id=1927444519]
+offset_top = 30.0
+offset_right = 40.0
+offset_bottom = 79.0
+text = "VP
+0/30"
+script = ExtResource("3_8g6nm")
+
+[node name="VPup" type="Button" parent="P1/VP" unique_id=1069737630]
+offset_left = 1.0
+offset_top = 271.0
+offset_right = 50.0
+offset_bottom = 302.0
+text = "▲"
+
+[node name="VPdown" type="Button" parent="P1/VP" unique_id=1093839193]
+offset_left = 1.0
+offset_top = 302.0
+offset_right = 50.0
+offset_bottom = 333.0
+text = "▼"
+
+[node name="SD" type="Node2D" parent="P1" unique_id=838400509]
+
+[node name="SSlider" type="VSlider" parent="P1/SD" unique_id=546024554]
+offset_left = 49.0
+offset_top = 77.0
+offset_right = 93.0
+offset_bottom = 271.0
+max_value = 500.0
+step = 10.0
+script = ExtResource("5_vwarc")
+
+[node name="SD" type="Label" parent="P1/SD" unique_id=1279916967]
+offset_left = 40.0
+offset_top = 29.0
+offset_right = 83.0
+offset_bottom = 78.0
+text = "0/500
+     SD"
+script = ExtResource("6_ropwx")
+
+[node name="SDup" type="Button" parent="P1/SD" unique_id=174295050]
+offset_left = 50.0
+offset_top = 271.0
+offset_right = 96.0
+offset_bottom = 302.0
+text = "▲"
+
+[node name="SDdown" type="Button" parent="P1/SD" unique_id=1444229458]
+offset_left = 50.0
+offset_top = 302.0
+offset_right = 96.0
+offset_bottom = 333.0
+text = "▼"
+
+[node name="RP" type="Node2D" parent="P1" unique_id=1672933680]
+
+[node name="RSlider" type="VSlider" parent="P1/RP" unique_id=987444251]
+offset_left = 95.0
+offset_top = 77.0
+offset_right = 137.0
+offset_bottom = 271.0
+max_value = 30.0
+script = ExtResource("7_umgyx")
+
+[node name="RP" type="Label" parent="P1/RP" unique_id=25427213]
+offset_left = 103.0
+offset_top = 30.0
+offset_right = 143.0
+offset_bottom = 79.0
+text = "   RP
+0/30"
+script = ExtResource("8_2khvy")
+
+[node name="RPup" type="Button" parent="P1/RP" unique_id=1820872502]
+offset_left = 96.0
+offset_top = 271.0
+offset_right = 136.0
+offset_bottom = 302.0
+text = "▲"
+
+[node name="RPdown" type="Button" parent="P1/RP" unique_id=855056476]
+offset_left = 96.0
+offset_top = 302.0
+offset_right = 136.0
+offset_bottom = 333.0
+text = "▼"
+
+[node name="P2" type="Node2D" parent="." unique_id=1334317600]
+position = Vector2(161, 3)
+
+[node name="ColorRect" type="ColorRect" parent="P2" unique_id=1232316913]
+offset_left = -4.0
+offset_top = -5.0
+offset_right = 161.0
+offset_bottom = 338.0
+color = Color(0.1882353, 0.3647059, 0.7294118, 1)
+
+[node name="Player 2" type="Label" parent="P2" unique_id=1938402934]
+offset_left = 27.0
+offset_top = 1.0
+offset_right = 89.0
+offset_bottom = 24.0
+text = "Player 2"
+
+[node name="VP" type="Node2D" parent="P2" unique_id=387436411]
+
+[node name="VSlider" type="VSlider" parent="P2/VP" unique_id=1800072765]
+offset_top = 77.0
+offset_right = 48.0
+offset_bottom = 270.0
+max_value = 30.0
+script = ExtResource("3_vfxqr")
+
+[node name="VP" type="Label" parent="P2/VP" unique_id=1090184888]
+offset_top = 30.0
+offset_right = 40.0
+offset_bottom = 79.0
+text = "VP
+0/30"
+script = ExtResource("3_8g6nm")
+
+[node name="VPup" type="Button" parent="P2/VP" unique_id=81679136]
+offset_left = 1.0
+offset_top = 271.0
+offset_right = 50.0
+offset_bottom = 302.0
+text = "▲"
+
+[node name="VPdown" type="Button" parent="P2/VP" unique_id=1441604742]
+offset_left = 1.0
+offset_top = 302.0
+offset_right = 50.0
+offset_bottom = 333.0
+text = "▼"
+
+[node name="SD" type="Node2D" parent="P2" unique_id=1021100708]
+
+[node name="SSlider" type="VSlider" parent="P2/SD" unique_id=1454211255]
+offset_left = 49.0
+offset_top = 77.0
+offset_right = 93.0
+offset_bottom = 271.0
+max_value = 500.0
+step = 10.0
+script = ExtResource("5_vwarc")
+
+[node name="SD" type="Label" parent="P2/SD" unique_id=1379727538]
+offset_left = 40.0
+offset_top = 29.0
+offset_right = 83.0
+offset_bottom = 78.0
+text = "0/500
+     SD"
+script = ExtResource("6_ropwx")
+
+[node name="SDup" type="Button" parent="P2/SD" unique_id=960617558]
+offset_left = 50.0
+offset_top = 271.0
+offset_right = 96.0
+offset_bottom = 302.0
+text = "▲"
+
+[node name="SDdown" type="Button" parent="P2/SD" unique_id=739164868]
+offset_left = 50.0
+offset_top = 302.0
+offset_right = 96.0
+offset_bottom = 333.0
+text = "▼"
+
+[node name="RP" type="Node2D" parent="P2" unique_id=28055980]
+
+[node name="RSlider" type="VSlider" parent="P2/RP" unique_id=1688637422]
+offset_left = 95.0
+offset_top = 77.0
+offset_right = 137.0
+offset_bottom = 271.0
+max_value = 30.0
+script = ExtResource("7_umgyx")
+
+[node name="RP" type="Label" parent="P2/RP" unique_id=1251567707]
+offset_left = 103.0
+offset_top = 30.0
+offset_right = 143.0
+offset_bottom = 79.0
+text = "   RP
+0/30"
+script = ExtResource("8_2khvy")
+
+[node name="RPup" type="Button" parent="P2/RP" unique_id=1999166430]
+offset_left = 96.0
+offset_top = 271.0
+offset_right = 136.0
+offset_bottom = 302.0
+text = "▲"
+
+[node name="RPdown" type="Button" parent="P2/RP" unique_id=61037109]
+offset_left = 96.0
+offset_top = 302.0
+offset_right = 136.0
+offset_bottom = 333.0
+text = "▼"
+
+[node name="P3" type="Node2D" parent="." unique_id=743827716]
+position = Vector2(0, 346)
+
+[node name="ColorRect" type="ColorRect" parent="P3" unique_id=2077833393]
+offset_left = -4.0
+offset_top = -5.0
+offset_right = 161.0
+offset_bottom = 338.0
+color = Color(0.1882353, 0.74509805, 0.7294118, 1)
+
+[node name="Player 3" type="Label" parent="P3" unique_id=308420655]
+offset_left = 28.0
+offset_top = 1.0
+offset_right = 90.0
+offset_bottom = 24.0
+text = "Player 3"
+
+[node name="VP" type="Node2D" parent="P3" unique_id=1596789364]
+
+[node name="VSlider" type="VSlider" parent="P3/VP" unique_id=366529339]
+offset_top = 77.0
+offset_right = 48.0
+offset_bottom = 270.0
+max_value = 30.0
+script = ExtResource("3_vfxqr")
+
+[node name="VP" type="Label" parent="P3/VP" unique_id=1430315995]
+offset_top = 30.0
+offset_right = 40.0
+offset_bottom = 79.0
+text = "VP
+0/30"
+script = ExtResource("3_8g6nm")
+
+[node name="VPup" type="Button" parent="P3/VP" unique_id=770233487]
+offset_left = 1.0
+offset_top = 271.0
+offset_right = 50.0
+offset_bottom = 302.0
+text = "▲"
+
+[node name="VPdown" type="Button" parent="P3/VP" unique_id=1818059453]
+offset_left = 1.0
+offset_top = 302.0
+offset_right = 50.0
+offset_bottom = 333.0
+text = "▼"
+
+[node name="SD" type="Node2D" parent="P3" unique_id=1659665195]
+
+[node name="SSlider" type="VSlider" parent="P3/SD" unique_id=1676612348]
+offset_left = 49.0
+offset_top = 77.0
+offset_right = 93.0
+offset_bottom = 271.0
+max_value = 500.0
+step = 10.0
+script = ExtResource("5_vwarc")
+
+[node name="SD" type="Label" parent="P3/SD" unique_id=333732494]
+offset_left = 40.0
+offset_top = 29.0
+offset_right = 83.0
+offset_bottom = 78.0
+text = "0/500
+     SD"
+script = ExtResource("6_ropwx")
+
+[node name="SDup" type="Button" parent="P3/SD" unique_id=1028864752]
+offset_left = 50.0
+offset_top = 271.0
+offset_right = 96.0
+offset_bottom = 302.0
+text = "▲"
+
+[node name="SDdown" type="Button" parent="P3/SD" unique_id=1246953517]
+offset_left = 50.0
+offset_top = 302.0
+offset_right = 96.0
+offset_bottom = 333.0
+text = "▼"
+
+[node name="RP" type="Node2D" parent="P3" unique_id=1359103986]
+
+[node name="RSlider" type="VSlider" parent="P3/RP" unique_id=1164078270]
+offset_left = 95.0
+offset_top = 77.0
+offset_right = 137.0
+offset_bottom = 271.0
+max_value = 30.0
+script = ExtResource("7_umgyx")
+
+[node name="RP" type="Label" parent="P3/RP" unique_id=2022955481]
+offset_left = 103.0
+offset_top = 30.0
+offset_right = 143.0
+offset_bottom = 79.0
+text = "   RP
+0/30"
+script = ExtResource("8_2khvy")
+
+[node name="RPup" type="Button" parent="P3/RP" unique_id=742765037]
+offset_left = 96.0
+offset_top = 271.0
+offset_right = 136.0
+offset_bottom = 302.0
+text = "▲"
+
+[node name="RPdown" type="Button" parent="P3/RP" unique_id=22320515]
+offset_left = 96.0
+offset_top = 302.0
+offset_right = 136.0
+offset_bottom = 333.0
+text = "▼"
+
+[node name="P4" type="Node2D" parent="." unique_id=1079166470]
+position = Vector2(161, 346)
+
+[node name="ColorRect" type="ColorRect" parent="P4" unique_id=259299225]
+offset_left = -4.0
+offset_top = -5.0
+offset_right = 161.0
+offset_bottom = 338.0
+color = Color(0.49411765, 0.9098039, 0.8745098, 1)
+
+[node name="Player 4" type="Label" parent="P4" unique_id=302195232]
+offset_left = 28.0
+offset_top = 1.0
+offset_right = 90.0
+offset_bottom = 24.0
+text = "Player 4"
+
+[node name="VP" type="Node2D" parent="P4" unique_id=359585890]
+
+[node name="VSlider" type="VSlider" parent="P4/VP" unique_id=1509007009]
+offset_top = 77.0
+offset_right = 48.0
+offset_bottom = 270.0
+max_value = 30.0
+script = ExtResource("3_vfxqr")
+
+[node name="VP" type="Label" parent="P4/VP" unique_id=1160418564]
+offset_top = 30.0
+offset_right = 40.0
+offset_bottom = 79.0
+text = "VP
+0/30"
+script = ExtResource("3_8g6nm")
+
+[node name="VPup" type="Button" parent="P4/VP" unique_id=285047353]
+offset_left = 1.0
+offset_top = 271.0
+offset_right = 50.0
+offset_bottom = 302.0
+text = "▲"
+
+[node name="VPdown" type="Button" parent="P4/VP" unique_id=2085444390]
+offset_left = 1.0
+offset_top = 302.0
+offset_right = 50.0
+offset_bottom = 333.0
+text = "▼"
+
+[node name="SD" type="Node2D" parent="P4" unique_id=1712079945]
+
+[node name="SSlider" type="VSlider" parent="P4/SD" unique_id=715716790]
+offset_left = 49.0
+offset_top = 77.0
+offset_right = 93.0
+offset_bottom = 271.0
+max_value = 500.0
+step = 10.0
+script = ExtResource("5_vwarc")
+
+[node name="SD" type="Label" parent="P4/SD" unique_id=2120245490]
+offset_left = 40.0
+offset_top = 29.0
+offset_right = 83.0
+offset_bottom = 78.0
+text = "0/500
+     SD"
+script = ExtResource("6_ropwx")
+
+[node name="SDup" type="Button" parent="P4/SD" unique_id=516451379]
+offset_left = 50.0
+offset_top = 271.0
+offset_right = 96.0
+offset_bottom = 302.0
+text = "▲"
+
+[node name="SDdown" type="Button" parent="P4/SD" unique_id=375195563]
+offset_left = 50.0
+offset_top = 302.0
+offset_right = 96.0
+offset_bottom = 333.0
+text = "▼"
+
+[node name="RP" type="Node2D" parent="P4" unique_id=222626585]
+
+[node name="RSlider" type="VSlider" parent="P4/RP" unique_id=580492581]
+offset_left = 95.0
+offset_top = 77.0
+offset_right = 137.0
+offset_bottom = 271.0
+max_value = 30.0
+script = ExtResource("7_umgyx")
+
+[node name="RP" type="Label" parent="P4/RP" unique_id=1221363244]
+offset_left = 103.0
+offset_top = 30.0
+offset_right = 143.0
+offset_bottom = 79.0
+text = "   RP
+0/30"
+script = ExtResource("8_2khvy")
+
+[node name="RPup" type="Button" parent="P4/RP" unique_id=1421572492]
+offset_left = 96.0
+offset_top = 271.0
+offset_right = 136.0
+offset_bottom = 302.0
+text = "▲"
+
+[node name="RPdown" type="Button" parent="P4/RP" unique_id=288182631]
+offset_left = 96.0
+offset_top = 302.0
+offset_right = 136.0
+offset_bottom = 333.0
+text = "▼"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=17238060]
+position = Vector2(601, 343)
+zoom = Vector2(0.95, 0.95)
+
+[node name="Dice" type="Node2D" parent="." unique_id=850085749]
+position = Vector2(337, 468)
+
+[node name="ColorRect" type="ColorRect" parent="Dice" unique_id=822732300]
+offset_left = -15.0
+offset_right = 226.0
+offset_bottom = 216.0
+color = Color(0.1882353, 0.52156866, 0.73333335, 1)
+
+[node name="D4" type="Button" parent="Dice" unique_id=1352116472]
+offset_top = 63.0
+offset_right = 67.0
+offset_bottom = 94.0
+text = " Roll D4"
+
+[node name="D6" type="Button" parent="Dice" unique_id=448991191]
+offset_left = 124.0
+offset_top = 63.0
+offset_right = 191.0
+offset_bottom = 94.0
+text = " Roll D6"
+
+[node name="D8" type="Button" parent="Dice" unique_id=1853378632]
+offset_top = 121.0
+offset_right = 67.0
+offset_bottom = 152.0
+text = " Roll D8"
+
+[node name="D10" type="Button" parent="Dice" unique_id=770721006]
+offset_left = 124.0
+offset_top = 121.0
+offset_right = 200.0
+offset_bottom = 152.0
+text = " Roll D10"
+
+[node name="D12" type="Button" parent="Dice" unique_id=393840284]
+offset_top = 170.0
+offset_right = 76.0
+offset_bottom = 201.0
+text = " Roll D12"
+
+[node name="D20" type="Button" parent="Dice" unique_id=1772042145]
+offset_left = 124.0
+offset_top = 170.0
+offset_right = 200.0
+offset_bottom = 201.0
+text = " Roll D20"
+
+[node name="Latest Roll" type="Label" parent="Dice" unique_id=1864699636]
+offset_top = 29.0
+offset_right = 211.0
+offset_bottom = 52.0
+text = "Latest Outcome: 0 From D0"
+script = ExtResource("9_2khvy")
+
 [connection signal="pressed" from="Draw" to="." method="_on_draw_pressed"]
+[connection signal="value_changed" from="P1/VP/VSlider" to="P1/VP/VP" method="_on_v_slider_value_changed"]
+[connection signal="pressed" from="P1/VP/VPup" to="P1/VP/VSlider" method="_on_v_pup_pressed"]
+[connection signal="pressed" from="P1/VP/VPdown" to="P1/VP/VSlider" method="_on_v_pdown_pressed"]
+[connection signal="value_changed" from="P1/SD/SSlider" to="P1/VP/VP" method="_on_s_slider_value_changed"]
+[connection signal="value_changed" from="P1/SD/SSlider" to="P1/SD/SD" method="_on_s_slider_value_changed"]
+[connection signal="pressed" from="P1/SD/SDup" to="P1/SD/SSlider" method="_on_s_dup_pressed"]
+[connection signal="pressed" from="P1/SD/SDdown" to="P1/SD/SSlider" method="_on_s_ddown_pressed"]
+[connection signal="value_changed" from="P1/RP/RSlider" to="P1/RP/RP" method="_on_r_slider_value_changed"]
+[connection signal="pressed" from="P1/RP/RPup" to="P1/RP/RSlider" method="_on_r_pup_pressed"]
+[connection signal="pressed" from="P1/RP/RPdown" to="P1/RP/RSlider" method="_on_r_pdown_pressed"]
+[connection signal="value_changed" from="P2/VP/VSlider" to="P2/VP/VP" method="_on_v_slider_value_changed"]
+[connection signal="pressed" from="P2/VP/VPup" to="P2/VP/VSlider" method="_on_v_pup_pressed"]
+[connection signal="pressed" from="P2/VP/VPdown" to="P2/VP/VSlider" method="_on_v_pdown_pressed"]
+[connection signal="value_changed" from="P2/SD/SSlider" to="P2/VP/VP" method="_on_s_slider_value_changed"]
+[connection signal="value_changed" from="P2/SD/SSlider" to="P2/SD/SD" method="_on_s_slider_value_changed"]
+[connection signal="pressed" from="P2/SD/SDup" to="P2/SD/SSlider" method="_on_s_dup_pressed"]
+[connection signal="pressed" from="P2/SD/SDdown" to="P2/SD/SSlider" method="_on_s_ddown_pressed"]
+[connection signal="value_changed" from="P2/RP/RSlider" to="P2/RP/RP" method="_on_r_slider_value_changed"]
+[connection signal="pressed" from="P2/RP/RPup" to="P2/RP/RSlider" method="_on_r_pup_pressed"]
+[connection signal="pressed" from="P2/RP/RPdown" to="P2/RP/RSlider" method="_on_r_pdown_pressed"]
+[connection signal="value_changed" from="P3/VP/VSlider" to="P3/VP/VP" method="_on_v_slider_value_changed"]
+[connection signal="pressed" from="P3/VP/VPup" to="P3/VP/VSlider" method="_on_v_pup_pressed"]
+[connection signal="pressed" from="P3/VP/VPdown" to="P3/VP/VSlider" method="_on_v_pdown_pressed"]
+[connection signal="value_changed" from="P3/SD/SSlider" to="P3/VP/VP" method="_on_s_slider_value_changed"]
+[connection signal="value_changed" from="P3/SD/SSlider" to="P3/SD/SD" method="_on_s_slider_value_changed"]
+[connection signal="pressed" from="P3/SD/SDup" to="P3/SD/SSlider" method="_on_s_dup_pressed"]
+[connection signal="pressed" from="P3/SD/SDdown" to="P3/SD/SSlider" method="_on_s_ddown_pressed"]
+[connection signal="value_changed" from="P3/RP/RSlider" to="P3/RP/RP" method="_on_r_slider_value_changed"]
+[connection signal="pressed" from="P3/RP/RPup" to="P3/RP/RSlider" method="_on_r_pup_pressed"]
+[connection signal="pressed" from="P3/RP/RPdown" to="P3/RP/RSlider" method="_on_r_pdown_pressed"]
+[connection signal="value_changed" from="P4/VP/VSlider" to="P4/VP/VP" method="_on_v_slider_value_changed"]
+[connection signal="pressed" from="P4/VP/VPup" to="P4/VP/VSlider" method="_on_v_pup_pressed"]
+[connection signal="pressed" from="P4/VP/VPdown" to="P4/VP/VSlider" method="_on_v_pdown_pressed"]
+[connection signal="value_changed" from="P4/SD/SSlider" to="P4/VP/VP" method="_on_s_slider_value_changed"]
+[connection signal="value_changed" from="P4/SD/SSlider" to="P4/SD/SD" method="_on_s_slider_value_changed"]
+[connection signal="pressed" from="P4/SD/SDup" to="P4/SD/SSlider" method="_on_s_dup_pressed"]
+[connection signal="pressed" from="P4/SD/SDdown" to="P4/SD/SSlider" method="_on_s_ddown_pressed"]
+[connection signal="value_changed" from="P4/RP/RSlider" to="P4/RP/RP" method="_on_r_slider_value_changed"]
+[connection signal="pressed" from="P4/RP/RPup" to="P4/RP/RSlider" method="_on_r_pup_pressed"]
+[connection signal="pressed" from="P4/RP/RPdown" to="P4/RP/RSlider" method="_on_r_pdown_pressed"]
+[connection signal="pressed" from="Dice/D4" to="Dice/Latest Roll" method="_on_d_4_pressed"]
+[connection signal="pressed" from="Dice/D6" to="Dice/Latest Roll" method="_on_d_6_pressed"]
+[connection signal="pressed" from="Dice/D8" to="Dice/Latest Roll" method="_on_d_8_pressed"]
+[connection signal="pressed" from="Dice/D10" to="Dice/Latest Roll" method="_on_d_10_pressed"]
+[connection signal="pressed" from="Dice/D12" to="Dice/Latest Roll" method="_on_d_12_pressed"]
+[connection signal="pressed" from="Dice/D20" to="Dice/Latest Roll" method="_on_d_13_pressed"]
