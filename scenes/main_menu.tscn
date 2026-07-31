@@ -5,7 +5,7 @@
 [node name="main menu" type="Node2D" unique_id=2032728480]
 script = ExtResource("1_l6cm7")
 
-[node name="Button" type="Button" parent="." unique_id=914018667]
+[node name="Start" type="Button" parent="." unique_id=914018667]
 offset_left = 529.0
 offset_top = 371.0
 offset_right = 575.0
@@ -13,4 +13,12 @@ offset_bottom = 402.0
 text = "Start"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="LinkButton" type="LinkButton" parent="." unique_id=280291390]
+offset_left = 432.0
+offset_top = 607.0
+offset_right = 658.0
+offset_bottom = 647.0
+text = "This Project is OPEN SOURCE!"
+uri = "https://github.com/the-one-carbon-fox/SeaPals-Godot"
+
+[connection signal="pressed" from="Start" to="." method="_on_button_pressed"]
