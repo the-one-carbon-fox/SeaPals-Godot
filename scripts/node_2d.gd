@@ -1,6 +1,9 @@
 extends Sprite2D
 
 func _ready() -> void:
+	centered = true
+	rotation_degrees = -90.0
+	scale = Vector2(0.48, 0.48)
 	var root := get_parent()   # this is the "conditions" node
 
 	if root:
@@ -18,5 +21,6 @@ func change_skin(condition_name: String) -> void:
 
 	if ResourceLoader.exists(path):
 		texture = load(path)
+		rotation_degrees = -90.0
 	else:
 		push_error("Missing skin texture for: " + condition_name)
