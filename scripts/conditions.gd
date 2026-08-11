@@ -10,6 +10,7 @@ const SEA_PANEL := Color(0.043, 0.365, 0.459, 1.0)
 const SEA_FOAM := Color(0.843, 1.0, 0.969, 1.0)
 const CORAL := Color(1.0, 0.498, 0.431, 1.0)
 const GOLD := Color(1.0, 0.82, 0.4, 1.0)
+const LOGO_TEXTURE := preload("res://assets/Images/ui/searealm_logo.svg")
 
 func _ready() -> void:
 	_build_table_backdrop()
@@ -78,7 +79,7 @@ func _build_table_backdrop() -> void:
 	background.name = "OceanTableBackdrop"
 	background.position = Vector2.ZERO
 	background.size = Vector2(1280.0, 720.0)
-	background.color = SEA_DEEP
+	background.color = Color(0.004, 0.052, 0.087, 1.0)
 	background.z_index = -40
 	add_child(background)
 	move_child(background, 0)
@@ -87,7 +88,7 @@ func _build_table_backdrop() -> void:
 	playmat.name = "CurrentPlaymat"
 	playmat.position = Vector2(632.0, 42.0)
 	playmat.size = Vector2(590.0, 585.0)
-	playmat.color = Color(SEA_PANEL.r, SEA_PANEL.g, SEA_PANEL.b, 0.56)
+	playmat.color = Color(SEA_PANEL.r, SEA_PANEL.g, SEA_PANEL.b, 0.72)
 	playmat.z_index = -35
 	add_child(playmat)
 	move_child(playmat, 1)
@@ -102,6 +103,17 @@ func _build_table_backdrop() -> void:
 	title.add_theme_font_size_override("font_size", 34)
 	title.z_index = -10
 	add_child(title)
+
+	var logo := TextureRect.new()
+	logo.name = "SeaRealmWatermark"
+	logo.texture = LOGO_TEXTURE
+	logo.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
+	logo.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	logo.position = Vector2(694.0, 112.0)
+	logo.size = Vector2(455.0, 95.0)
+	logo.modulate = Color(1.0, 1.0, 1.0, 0.82)
+	logo.z_index = -9
+	add_child(logo)
 
 	for i in range(8):
 		var ripple := Label.new()
@@ -127,7 +139,12 @@ func _style_draw_button() -> void:
 
 
 func _style_player_boards() -> void:
-	var colors := [Color(0.094, 0.651, 0.851, 1.0), Color(0.184, 0.365, 0.729, 1.0), Color(0.0, 0.659, 0.471, 1.0), Color(0.541, 0.361, 0.965, 1.0)]
+	var colors := [
+		Color(0.094, 0.651, 0.851, 1.0),
+		Color(0.184, 0.365, 0.729, 1.0),
+		Color(0.0, 0.659, 0.471, 1.0),
+		Color(0.541, 0.361, 0.965, 1.0),
+	]
 	for i in range(4):
 		var board := get_node_or_null("P%d/ColorRect" % (i + 1)) as ColorRect
 		if board == null:
