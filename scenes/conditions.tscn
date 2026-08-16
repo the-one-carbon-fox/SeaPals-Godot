@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bh7p8mou0d7ex" path="res://scripts/r_slider.gd" id="7_umgyx"]
 [ext_resource type="Script" uid="uid://bn37mb2hsxlc8" path="res://scripts/rp.gd" id="8_2khvy"]
 [ext_resource type="Script" uid="uid://ckbps7rhuxxgg" path="res://scripts/label.gd" id="9_2khvy"]
+[ext_resource type="Script" uid="uid://cgnqj2kfeufcl" path="res://scripts/latest.gd" id="10_vegtb"]
 
 [node name="conditions" type="Node2D" unique_id=1961213245]
 script = ExtResource("1_agbcl")
@@ -543,6 +544,85 @@ offset_bottom = 52.0
 text = "Latest Outcome: 0 From D0"
 script = ExtResource("9_2khvy")
 
+[node name="Dice2" type="Node2D" parent="." unique_id=1293021680]
+position = Vector2(337, 258)
+
+[node name="ColorRect" type="ColorRect" parent="Dice2" unique_id=440125900]
+offset_left = -15.0
+offset_right = 226.0
+offset_bottom = 216.0
+color = Color(0.15294118, 0.28627452, 0.8784314, 1)
+
+[node name="D4" type="Button" parent="Dice2" unique_id=1882598140]
+offset_top = 63.0
+offset_right = 67.0
+offset_bottom = 94.0
+text = " Roll D4"
+
+[node name="D6" type="Button" parent="Dice2" unique_id=929945820]
+offset_left = 124.0
+offset_top = 63.0
+offset_right = 191.0
+offset_bottom = 94.0
+text = " Roll D6"
+
+[node name="D8" type="Button" parent="Dice2" unique_id=113598087]
+offset_top = 121.0
+offset_right = 67.0
+offset_bottom = 152.0
+text = " Roll D8"
+
+[node name="D10" type="Button" parent="Dice2" unique_id=888855700]
+offset_left = 124.0
+offset_top = 121.0
+offset_right = 200.0
+offset_bottom = 152.0
+text = " Roll D10"
+
+[node name="D12" type="Button" parent="Dice2" unique_id=1745425328]
+offset_top = 170.0
+offset_right = 76.0
+offset_bottom = 201.0
+text = " Roll D12"
+
+[node name="D20" type="Button" parent="Dice2" unique_id=723437163]
+offset_left = 124.0
+offset_top = 170.0
+offset_right = 200.0
+offset_bottom = 201.0
+text = " Roll D20"
+
+[node name="Latest Roll" type="Label" parent="Dice2" unique_id=428258130]
+offset_top = 29.0
+offset_right = 211.0
+offset_bottom = 52.0
+text = "Latest Outcome: 0 From D0"
+script = ExtResource("9_2khvy")
+
+[node name="Coin" type="Node2D" parent="." unique_id=431953009]
+
+[node name="ColorRect" type="ColorRect" parent="Coin" unique_id=1716598034]
+offset_left = 322.0
+offset_top = 3.0
+offset_right = 563.0
+offset_bottom = 258.0
+color = Color(0.16078432, 0.5803922, 0.57254905, 1)
+
+[node name="Flip" type="Button" parent="Coin" unique_id=935581149]
+offset_left = 322.0
+offset_top = 201.0
+offset_right = 563.0
+offset_bottom = 258.0
+text = "Flip Coin"
+
+[node name="Latest" type="Label" parent="Coin" unique_id=888623677]
+offset_left = 379.0
+offset_top = 59.0
+offset_right = 499.0
+offset_bottom = 82.0
+text = "Latest Flip: Null"
+script = ExtResource("10_vegtb")
+
 [connection signal="pressed" from="Draw" to="." method="_on_draw_pressed"]
 [connection signal="value_changed" from="P1/VP/VSlider" to="P1/VP/VP" method="_on_v_slider_value_changed"]
 [connection signal="pressed" from="P1/VP/VPup" to="P1/VP/VSlider" method="_on_v_pup_pressed"]
@@ -590,3 +670,10 @@ script = ExtResource("9_2khvy")
 [connection signal="pressed" from="Dice/D10" to="Dice/Latest Roll" method="_on_d_10_pressed"]
 [connection signal="pressed" from="Dice/D12" to="Dice/Latest Roll" method="_on_d_12_pressed"]
 [connection signal="pressed" from="Dice/D20" to="Dice/Latest Roll" method="_on_d_13_pressed"]
+[connection signal="pressed" from="Dice2/D4" to="Dice2/Latest Roll" method="_on_d_4_pressed"]
+[connection signal="pressed" from="Dice2/D6" to="Dice2/Latest Roll" method="_on_d_6_pressed"]
+[connection signal="pressed" from="Dice2/D8" to="Dice2/Latest Roll" method="_on_d_8_pressed"]
+[connection signal="pressed" from="Dice2/D10" to="Dice2/Latest Roll" method="_on_d_10_pressed"]
+[connection signal="pressed" from="Dice2/D12" to="Dice2/Latest Roll" method="_on_d_12_pressed"]
+[connection signal="pressed" from="Dice2/D20" to="Dice2/Latest Roll" method="_on_d_13_pressed"]
+[connection signal="pressed" from="Coin/Flip" to="Coin/Latest" method="_on_flip_pressed"]

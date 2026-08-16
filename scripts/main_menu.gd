@@ -73,14 +73,14 @@ func _build_ocean_backdrop() -> void:
 		bubble.z_index = -20
 		add_child(bubble)
 
-	var logo := TextureRect.new()
-	logo.name = "SeaRealmLogo"
-	logo.texture = LOGO_TEXTURE
-	logo.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
-	logo.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	logo.position = Vector2(120.0, 78.0)
-	logo.size = Vector2(1040.0, 210.0)
-	add_child(logo)
+	#var logo := TextureRect.new()
+	#logo.name = "SeaRealmLogo"
+	#logo.texture = LOGO_TEXTURE
+	#logo.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
+	#logo.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	#logo.position = Vector2(120.0, 78.0)
+	#logo.size = Vector2(1040.0, 210.0)
+	#add_child(logo)
 
 	var subtitle := Label.new()
 	subtitle.name = "Subtitle"
