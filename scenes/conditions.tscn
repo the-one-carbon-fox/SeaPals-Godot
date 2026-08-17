@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d1ob561jvjfaq"]
 
-[ext_resource type="Script" uid="uid://bmls8ilmh7ibn" path="res://scripts/conditions.gd" id="1_agbcl"]
+[ext_resource type="Script" uid="uid://ctxdexalxbnho" path="res://scripts/conditions.gd" id="1_agbcl"]
 [ext_resource type="Script" uid="uid://bpfm0hcy8x43s" path="res://scripts/node_2d.gd" id="2_4d2fy"]
 [ext_resource type="Script" uid="uid://rg0p3udxdgdd" path="res://scripts/vp.gd" id="3_8g6nm"]
 [ext_resource type="Script" uid="uid://b2ik7dhh8dnwp" path="res://scripts/v_slider.gd" id="3_vfxqr"]
@@ -13,6 +13,13 @@
 
 [node name="conditions" type="Node2D" unique_id=1961213245]
 script = ExtResource("1_agbcl")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2009908406]
+offset_left = 563.0
+offset_top = 4.0
+offset_right = 1206.0
+offset_bottom = 688.0
+color = Color(0.03137255, 0.27450982, 0.4509804, 1)
 
 [node name="Draw" type="Button" parent="." unique_id=491413789]
 offset_left = 657.0

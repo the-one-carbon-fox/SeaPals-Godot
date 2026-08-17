@@ -1,7 +1,7 @@
 extends Label
 
-func rand(min: int, max: int) -> int:
-	var n = randi_range(min, max)
+func rand(minin: int, maxin: int) -> int:
+	var n = randi_range(minin, maxin)
 	return n
 
 

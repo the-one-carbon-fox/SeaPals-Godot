@@ -2,8 +2,8 @@ extends Label
 
 
 # Called when the node enters the scene tree for the first time.
-func rand(min: int, max: int) -> int:
-	var n = randi_range(min, max)
+func rand(minin: int, maxin: int) -> int:
+	var n = randi_range(minin, maxin)
 	return n
 
 
